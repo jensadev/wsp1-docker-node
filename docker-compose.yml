@@ -1,0 +1,14 @@
+version: "3"
+services:
+  node:
+    container_name: nodejs
+    image: "node:12"
+    user: "node"
+    working_dir: /var/www
+    environment:
+      - NODE_ENV=development
+    volumes:
+      - ./:/var/www
+    ports:
+    - "3000:3000"
+    command: "npm start"
